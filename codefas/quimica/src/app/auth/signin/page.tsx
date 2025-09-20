@@ -8,19 +8,9 @@ import AuthWrapper from "@/components/root/AuthWrapper";
 export default function SignIn() {
   const { data: session } = useSession();
 
-  // Background animado comum
-  const BackgroundAnimation = () => (
-    <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute w-32 h-32 bg-blue-500/20 rounded-full animate-bounce-slow top-10 left-10"></div>
-      <div className="absolute w-20 h-20 bg-green-400/20 rounded-full animate-bounce-slower bottom-20 right-20"></div>
-      <div className="absolute w-16 h-16 bg-purple-500/20 rounded-full animate-bounce-slowest top-1/3 left-1/2"></div>
-    </div>
-  );
-
   if (!session) {
     return (
         <div className="relative flex items-center justify-center h-screen">
-          <BackgroundAnimation />
 
           <button
             onClick={() => signIn("google")}
@@ -36,7 +26,6 @@ export default function SignIn() {
   return (
     <AuthWrapper>
       <div className="relative flex items-center justify-center h-screen">
-        <BackgroundAnimation />
 
         <div className="bg-cyan-100/50 shadow-lg rounded-2xl overflow-hidden w-80 relative z-10 border-4 border-cyan-100">
           {/* Conteúdo */}
